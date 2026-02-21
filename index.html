@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akshay Sadafal - Biodata</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #c9a84c;
+    --gold-light: #f0d080;
+    --gold-dark: #8b6914;
+    --cream: #fdf8ee;
+    --deep: #1a0e00;
+    --rust: #8b3a0f;
+    --card-bg: rgba(253,248,238,0.97);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    min-height: 100vh;
+    background: radial-gradient(ellipse at 20% 20%, #3d1c00 0%, #1a0900 40%, #0d0500 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Noto Sans Devanagari', serif;
+    overflow-x: hidden;
+    padding: 30px 16px;
+  }
+
+  /* Floating particles */
+  .particle {
+    position: fixed;
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--gold-light);
+    opacity: 0;
+    animation: float-up linear infinite;
+  }
+  @keyframes float-up {
+    0% { transform: translateY(100vh) scale(0); opacity: 0; }
+    10% { opacity: 0.7; }
+    90% { opacity: 0.3; }
+    100% { transform: translateY(-100px) scale(1.5); opacity: 0; }
+  }
+
+  /* Outer frame */
+  .outer-frame {
+    position: relative;
+    max-width: 820px;
+    width: 100%;
+    perspective: 1200px;
+  }
+
+  .card-3d {
+    transform-style: preserve-3d;
+    animation: card-float 6s ease-in-out infinite;
+    border-radius: 20px;
+    position: relative;
+  }
+
+  @keyframes card-float {
+    0%, 100% { transform: rotateX(2deg) rotateY(-2deg) translateY(0); }
+    25% { transform: rotateX(-1deg) rotateY(3deg) translateY(-8px); }
+    50% { transform: rotateX(3deg) rotateY(1deg) translateY(-4px); }
+    75% { transform: rotateX(-2deg) rotateY(-3deg) translateY(-10px); }
+  }
+
+  /* Glow shadow */
+  .card-3d::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, var(--gold), transparent, var(--gold-dark), transparent, var(--gold));
+    animation: border-rotate 4s linear infinite;
+    z-index: -1;
+  }
+  @keyframes border-rotate {
+    0% { filter: hue-rotate(0deg) brightness(1); }
+    50% { filter: hue-rotate(20deg) brightness(1.4); }
+    100% { filter: hue-rotate(0deg) brightness(1); }
+  }
+
+  .card-shadow {
+    position: absolute;
+    bottom: -30px;
+    left: 5%;
+    right: 5%;
+    height: 40px;
+    background: radial-gradient(ellipse, rgba(201,168,76,0.5) 0%, transparent 70%);
+    filter: blur(10px);
+    border-radius: 50%;
+    animation: shadow-pulse 6s ease-in-out infinite;
+  }
+  @keyframes shadow-pulse {
+    0%, 100% { opacity: 0.6; transform: scaleX(1); }
+    50% { opacity: 0.3; transform: scaleX(0.85); }
+  }
+
+  /* Main card */
+  .biodata-card {
+    background: var(--card-bg);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow:
+      0 0 60px rgba(201,168,76,0.3),
+      0 30px 60px rgba(0,0,0,0.8),
+      inset 0 1px 0 rgba(255,255,255,0.8);
+    position: relative;
+  }
+
+  /* Ornamental header */
+  .header {
+    background: linear-gradient(160deg, #3d1c00 0%, #6b3200 40%, #3d1c00 100%);
+    padding: 36px 40px 28px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 15px,
+      rgba(201,168,76,0.05) 15px,
+      rgba(201,168,76,0.05) 16px
+    );
+  }
+
+  .header-glow {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px; height: 150px;
+    background: radial-gradient(ellipse, rgba(201,168,76,0.2) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .ganesh-text {
+    font-family: 'Noto Sans Devanagari', serif;
+    font-size: 13px;
+    color: var(--gold-light);
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+    opacity: 0.9;
+  }
+
+  .title-main {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(24px, 5vw, 36px);
+    color: var(--gold);
+    text-shadow: 0 0 30px rgba(201,168,76,0.8), 0 2px 4px rgba(0,0,0,0.5);
+    letter-spacing: 6px;
+    animation: title-shimmer 3s ease-in-out infinite;
+  }
+  @keyframes title-shimmer {
+    0%, 100% { text-shadow: 0 0 30px rgba(201,168,76,0.8), 0 2px 4px rgba(0,0,0,0.5); }
+    50% { text-shadow: 0 0 50px rgba(240,208,128,1), 0 0 20px rgba(201,168,76,0.9), 0 2px 4px rgba(0,0,0,0.5); }
+  }
+
+  .ornament-line {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 16px 0 0;
+    justify-content: center;
+  }
+  .ornament-line::before, .ornament-line::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    max-width: 200px;
+  }
+  .ornament-diamond {
+    width: 8px; height: 8px;
+    background: var(--gold);
+    transform: rotate(45deg);
+    box-shadow: 0 0 10px var(--gold);
+  }
+
+  /* Profile area */
+  .profile-area {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 32px 40px 24px;
+    background: linear-gradient(180deg, rgba(201,168,76,0.08) 0%, transparent 100%);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+
+  .photo-frame {
+    flex-shrink: 0;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    position: relative;
+  }
+
+  .photo-frame::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: conic-gradient(var(--gold), var(--gold-light), var(--gold-dark), var(--gold));
+    animation: spin 4s linear infinite;
+    z-index: 0;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .photo-frame::after {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    background: conic-gradient(transparent 30%, rgba(201,168,76,0.3) 50%, transparent 70%);
+    animation: spin 2s linear infinite reverse;
+    z-index: 0;
+  }
+
+  .photo-inner {
+    position: relative;
+    z-index: 1;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #8b3a0f, #5a2008);
+    border: 3px solid var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-size: 48px;
+    color: var(--gold-light);
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
+  }
+
+  .name-block h2 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(18px, 4vw, 26px);
+    color: var(--rust);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    line-height: 1.3;
+  }
+
+  .name-block .subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    color: var(--gold-dark);
+    font-style: italic;
+    margin-top: 6px;
+    letter-spacing: 1px;
+  }
+
+  .name-block .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .tag {
+    background: linear-gradient(135deg, var(--rust), #6b2508);
+    color: var(--gold-light);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(139,58,15,0.4);
+    transform: translateZ(5px);
+  }
+
+  /* Content sections */
+  .content {
+    padding: 0 40px 40px;
+  }
+
+  .section {
+    margin-top: 32px;
+    animation: fade-in 0.6s ease both;
+  }
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+
+  .section-icon {
+    width: 36px; height: 36px;
+    background: linear-gradient(135deg, var(--rust), #6b2508);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    box-shadow: 0 4px 12px rgba(139,58,15,0.4), 0 0 0 2px rgba(201,168,76,0.3);
+    transform: rotate(0deg);
+    transition: transform 0.3s;
+  }
+  .section:hover .section-icon { transform: rotate(10deg) scale(1.1); }
+
+  .section-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 15px;
+    color: var(--rust);
+    letter-spacing: 2px;
+    position: relative;
+  }
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 10px;
+  }
+
+  .info-card {
+    background: white;
+    border-radius: 10px;
+    padding: 12px 16px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    border: 1px solid rgba(201,168,76,0.2);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06), 0 0 0 0 rgba(201,168,76,0);
+    transition: all 0.3s ease;
+    transform: translateZ(0);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .info-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--gold), var(--rust));
+    border-radius: 3px 0 0 3px;
+  }
+
+  .info-card:hover {
+    transform: translateY(-2px) translateZ(8px);
+    box-shadow: 0 8px 24px rgba(201,168,76,0.2), 0 2px 8px rgba(0,0,0,0.08);
+    border-color: rgba(201,168,76,0.4);
+  }
+
+  .info-label {
+    font-size: 10px;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    margin-bottom: 3px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+  }
+
+  .info-value {
+    font-size: 14px;
+    color: var(--deep);
+    font-weight: 600;
+    line-height: 1.5;
+    font-family: 'Noto Sans Devanagari', serif;
+  }
+
+  .info-value.english {
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* Address card - full width */
+  .info-card.full {
+    grid-column: 1 / -1;
+  }
+
+  /* Footer */
+  .footer {
+    background: linear-gradient(160deg, #3d1c00 0%, #6b3200 40%, #3d1c00 100%);
+    padding: 20px 40px;
+    text-align: center;
+    position: relative;
+  }
+
+  .footer::before {
+    content: '✦ ✦ ✦';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    padding: 2px 16px;
+    border-radius: 20px;
+    font-size: 10px;
+    color: var(--deep);
+    letter-spacing: 4px;
+  }
+
+  .footer-text {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 3px;
+    opacity: 0.8;
+  }
+
+  /* Decorative corners */
+  .corner {
+    position: absolute;
+    width: 50px; height: 50px;
+    pointer-events: none;
+    z-index: 10;
+  }
+  .corner-tl { top: 8px; left: 8px; }
+  .corner-tr { top: 8px; right: 8px; transform: scaleX(-1); }
+  .corner-bl { bottom: 8px; left: 8px; transform: scaleY(-1); }
+  .corner-br { bottom: 8px; right: 8px; transform: scale(-1); }
+
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201,168,76,0.4), transparent);
+    margin: 0 40px;
+  }
+
+  @media (max-width: 600px) {
+    .profile-area { flex-direction: column; text-align: center; padding: 24px 20px; }
+    .content { padding: 0 20px 30px; }
+    .footer { padding: 16px 20px; }
+    .header { padding: 28px 20px 20px; }
+    .info-grid { grid-template-columns: 1fr; }
+    .name-block .tags { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Floating particles -->
+<script>
+  for (let i = 0; i < 20; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.cssText = `
+      left: ${Math.random()*100}vw;
+      width: ${2+Math.random()*4}px;
+      height: ${2+Math.random()*4}px;
+      animation-duration: ${4+Math.random()*8}s;
+      animation-delay: ${Math.random()*6}s;
+    `;
+    document.body.appendChild(p);
+  }
+</script>
+
+<div class="outer-frame">
+  <div class="card-3d">
+    <div class="biodata-card">
+
+      <!-- Decorative SVG corners -->
+      <svg class="corner corner-tl" viewBox="0 0 50 50" fill="none">
+        <path d="M2 48 L2 2 L48 2" stroke="#c9a84c" stroke-width="2" fill="none"/>
+        <path d="M2 2 L14 2 M2 2 L2 14" stroke="#c9a84c" stroke-width="3"/>
+        <circle cx="2" cy="2" r="3" fill="#c9a84c"/>
+        <path d="M8 20 Q2 14 8 8" stroke="#f0d080" stroke-width="1" fill="none"/>
+      </svg>
+      <svg class="corner corner-tr" viewBox="0 0 50 50" fill="none">
+        <path d="M2 48 L2 2 L48 2" stroke="#c9a84c" stroke-width="2" fill="none"/>
+        <path d="M2 2 L14 2 M2 2 L2 14" stroke="#c9a84c" stroke-width="3"/>
+        <circle cx="2" cy="2" r="3" fill="#c9a84c"/>
+        <path d="M8 20 Q2 14 8 8" stroke="#f0d080" stroke-width="1" fill="none"/>
+      </svg>
+      <svg class="corner corner-bl" viewBox="0 0 50 50" fill="none">
+        <path d="M2 48 L2 2 L48 2" stroke="#c9a84c" stroke-width="2" fill="none"/>
+        <path d="M2 2 L14 2 M2 2 L2 14" stroke="#c9a84c" stroke-width="3"/>
+        <circle cx="2" cy="2" r="3" fill="#c9a84c"/>
+        <path d="M8 20 Q2 14 8 8" stroke="#f0d080" stroke-width="1" fill="none"/>
+      </svg>
+      <svg class="corner corner-br" viewBox="0 0 50 50" fill="none">
+        <path d="M2 48 L2 2 L48 2" stroke="#c9a84c" stroke-width="2" fill="none"/>
+        <path d="M2 2 L14 2 M2 2 L2 14" stroke="#c9a84c" stroke-width="3"/>
+        <circle cx="2" cy="2" r="3" fill="#c9a84c"/>
+        <path d="M8 20 Q2 14 8 8" stroke="#f0d080" stroke-width="1" fill="none"/>
+      </svg>
+
+      <!-- Header -->
+      <div class="header">
+        <div class="header-glow"></div>
+        <div class="ganesh-text">॥ श्रीगणेशाय नमः ॥</div>
+        <div class="title-main">BIODATA</div>
+        <div class="ornament-line"><div class="ornament-diamond"></div></div>
+      </div>
+
+      <!-- Profile -->
+      <div class="profile-area">
+        <div class="photo-frame">
+          <div class="photo-inner">🧑</div>
+        </div>
+        <div class="name-block">
+          <h2>अक्षय चांगदेव सदाफळ</h2>
+          <div class="subtitle">Akshay Changdev Sadafal</div>
+          <div class="tags">
+            <span class="tag">MSc IT</span>
+            <span class="tag">Software Engineer</span>
+            <span class="tag">हिंदू मराठा</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Personal Info -->
+      <div class="content">
+        <div class="section" style="animation-delay:0.1s">
+          <div class="section-header">
+            <div class="section-icon">👤</div>
+            <div class="section-title">वैयक्तिक माहिती</div>
+          </div>
+          <div class="info-grid">
+            <div class="info-card">
+              <div>
+                <div class="info-label">पूर्ण नाव</div>
+                <div class="info-value">अक्षय चांगदेव सदाफळ</div>
+              </div>
+            </div>
+            <div class="info-card">
+              <div>
+                <div class="info-label">जात / Caste</div>
+                <div class="info-value">हिंदू, मराठा</div>
+              </div>
+            </div>
+            <div class="info-card">
+              <div>
+                <div class="info-label">जन्मतारीख / DOB</div>
+                <div class="info-value english">11 April 1998</div>
+              </div>
+            </div>
+            <div class="info-card">
+              <div>
+                <div class="info-label">जन्मवेळ / Birth Time</div>
+                <div class="info-value english">04:00 AM</div>
+              </div>
+            </div>
+            <div class="info-card">
+              <div>
+                <div class="info-label">जन्म स्थान / Birthplace</div>
+                <div class="info-value">जळगाव</div>
+              </div>
+            </div>
+            <div class="info-card">
+              <div>
+                <div class="info-label">उंची / Height</div>
+                <div class="info-value english">5 ft 5 in</div>
+              </div>
+            </div>
+            <div class="info-card">
+              <div>
+                <div class="info-label">शिक्षण / Education</div>
+                <div class="info-value english">MSc - Information Technology</div>
+              </div>
+            </div>
+            <div class="info-card">
+              <div>
+                <div class="info-label">नोकरी / Profession</div>
+                <div class="info-value english">Software Engineer</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" style="animation-delay:0.2s">
+          <div class="section-header">
+            <div class="section-icon">🏠</div>
+            <div class="section-title">कौटुंबिक माहिती</div>
+          </div>
+          <div class="info-grid">
+            <div class="info-card">
+              <div>
+                <div class="info-label">वडिलांचे नाव</div>
+                <div class="info-value">चांगदेव पंढरीनाथ सदाफळ</div>
+              </div>
+            </div>
+            <div class="info-card">
+              <div>
+                <div class="info-label">वडिलांचा व्यवसाय</div>
+                <div class="info-value">शेतकरी</div>
+              </div>
+            </div>
+            <div class="info-card">
+              <div>
+                <div class="info-label">आईचे नाव</div>
+                <div class="info-value">बेबी चांगदेव सदाफळ</div>
+              </div>
+            </div>
+            <div class="info-card">
+              <div>
+                <div class="info-label">आईचा व्यवसाय</div>
+                <div class="info-value">शेतकरी</div>
+              </div>
+            </div>
+            <div class="info-card">
+              <div>
+                <div class="info-label">एकूण भाऊ / Brothers</div>
+                <div class="info-value english">1</div>
+              </div>
+            </div>
+            <div class="info-card">
+              <div>
+                <div class="info-label">एकूण बहिणी / Sisters</div>
+                <div class="info-value english">3</div>
+              </div>
+            </div>
+            <div class="info-card">
+              <div>
+                <div class="info-label">भाऊ / Brother</div>
+                <div class="info-value">निवृत्ती चांगदेव सदाफळ</div>
+              </div>
+            </div>
+            <div class="info-card">
+              <div>
+                <div class="info-label">मामाचे नाव</div>
+                <div class="info-value">लाडगाव</div>
+              </div>
+            </div>
+            <div class="info-card full">
+              <div>
+                <div class="info-label">चुलते / Uncles</div>
+                <div class="info-value">महिंद्र पंढरीनाथ सदाफळ, ज्ञानदेव पंढरीनाथ सदाफळ, सोपान पंढरीनाथ सदाफळ</div>
+              </div>
+            </div>
+            <div class="info-card full">
+              <div>
+                <div class="info-label">विवाहित बहिणी / Married Sisters</div>
+                <div class="info-value">वैशाली दादासाहेब ताणपुरे (Tanpure), सोनाली कैलास वरपे, मनीषा दिलीप पवार</div>
+              </div>
+            </div>
+            <div class="info-card full">
+              <div>
+                <div class="info-label">निवास पत्ता / Address</div>
+                <div class="info-value">मु. पो. नाडी (Nadi), वीरगाव, ता. वैजापूर, जि. संभाजीनगर, महाराष्ट्र</div>
+              </div>
+            </div>
+            <div class="info-card">
+              <div>
+                <div class="info-label">शेती / Farmland</div>
+                <div class="info-value">३ एकर (3 Acres)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <div class="footer-text">BIODATA ✦ बायोडेटा ✦ 2026</div>
+      </div>
+
+    </div><!-- .biodata-card -->
+  </div><!-- .card-3d -->
+  <div class="card-shadow"></div>
+</div><!-- .outer-frame -->
+
+<script>
+  // Mouse parallax effect
+  document.addEventListener('mousemove', (e) => {
+    const cx = window.innerWidth / 2;
+    const cy = window.innerHeight / 2;
+    const dx = (e.clientX - cx) / cx;
+    const dy = (e.clientY - cy) / cy;
+    const card = document.querySelector('.card-3d');
+    card.style.transform = `rotateX(${-dy * 8}deg) rotateY(${dx * 8}deg)`;
+  });
+  document.addEventListener('mouseleave', () => {
+    const card = document.querySelector('.card-3d');
+    card.style.transform = '';
+  });
+</script>
+
+</body>
+</html>
